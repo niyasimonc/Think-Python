@@ -12,7 +12,6 @@ def cartalk():
       c=0
       
       while i <l-1:
-#        print i,l
         if s[i]==s[i+1]:
            c=c+1
            if c==3:
