@@ -1,0 +1,23 @@
+from point import *
+
+def move_rectangle(rec,dx,dy):
+  rec.corner.x+=dx
+  rec.corner.y+=dy
+  print_point(rec.corner)
+  
+
+
+def main():
+  blank=point()
+  blank.x=10.0
+  blank.y=10.0
+  box=rectangle()
+  box.height=200
+  box.width=100
+  box.corner=blank
+  move_rectangle(box,5,10)
+
+
+
+if __name__=='__main__':
+  main()
