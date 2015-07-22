@@ -35,12 +35,11 @@ class PokerHand(Hand):
 
      
     def has_pair(self):
-        lis=self.cards
+        lis=self.cards[:]
         for card1 in self.cards:
               lis.remove(card1)
               for card2 in lis:
                   if card1.rank==card2.rank:
-#                     print card1,card2
                      return True
                   
         return False
@@ -49,12 +48,11 @@ class PokerHand(Hand):
    
     def has_two_pair(self):
         c=0
-        lis=self.cards
+        l=self.cards[:]
         for card1 in self.cards:
-            lis.remove(card1)
-            for card2 in lis:
+            l.remove(card1)
+            for card2 in l:
                if card1.rank==card2.rank:
-#                    print card1,card2
                     c=c+1
         if c==2:
            return True
@@ -62,14 +60,13 @@ class PokerHand(Hand):
             return False
     
     def three_of_kind(self):
-        lis=self.cards
+        lis=self.cards[:]
         for card1 in self.cards:
             lis.remove(card1)   
-            li=lis
+            li=lis[:]
             for card2 in lis:
                 li.remove(card2)
                 for card3 in li:
-#                      print card1,card2,card3
                       if card1==card2==card3:
                             return True
         return False
